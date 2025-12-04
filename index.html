@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Passionate Works — Dr. P. S. Suvetha</title>
+  <meta name="description" content="Passionate Works — portfolio of Dr. P. S. Suvetha. Drawings, portraits, acrylics and digital art." />
+
+  <style>
+    :root{
+      --bg:#f6f5f3; /* soft ivory */
+      --card:#ffffff;
+      --muted:#6b6b6b;
+      --accent:#2b2b2b;
+      --glass: rgba(255,255,255,0.65);
+      --shadow: 0 8px 30px rgba(11,12,14,0.06);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #efefee);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:28px 40px;
+      backdrop-filter: blur(6px);
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#fafafa,#e9e6e3);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:var(--shadow)}
+    h1.site-title{font-size:20px;margin:0}
+    p.tag{margin:0;color:var(--muted);font-size:13px}
+
+    main{max-width:1100px;margin:18px auto;padding:26px}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:26px;
+    }
+    .hero-card{background:var(--card);border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+    .hero h2{font-family: Georgia, 'Times New Roman', serif;font-size:36px;margin:0 0 8px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;text-decoration:none}
+
+    /* About */
+    .about{display:flex;gap:22px;margin-bottom:28px}
+    .about .bio{flex:1;background:var(--card);padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+    .about .meta{width:280px;display:flex;flex-direction:column;gap:12px;}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .art{background:linear-gradient(180deg,#fff,#fbfbfb);border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform .28s ease,box-shadow .28s ease}
+    .art img{width:100%;height:220px;object-fit:cover;display:block}
+    .meta-overlay{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.55);color:white;padding:8px 10px;border-radius:8px;font-size:13px}
+    .art:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,10,10,0.08)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:26px}
+    form.contact-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    label{display:block;font-size:13px;margin-bottom:6px;color:var(--muted)}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    textarea{min-height:120px;resize:vertical}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:#222;color:white;border:none;cursor:pointer}
+
+    footer{padding:32px;text-align:center;color:var(--muted)}
+
+    /* Lightbox modal */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(11,12,14,0.6);z-index:90}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:92%;max-height:82%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+
+    /* responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+      .about{flex-direction:column}
+    }
+    @media (max-width:520px){
+      .gallery{grid-template-columns:1fr}
+      header{padding:16px}
+      main{padding:14px}
+      .hero h2{font-size:28px}
+    }
+
+    /* small animation */
+    .reveal{opacity:0;transform:translateY(8px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">PW</div>
+      <div>
+        <h1 class="site-title">Passionate Works</h1>
+        <p class="tag">Dr. P. S. Suvetha — Drawings • Portraits • Acrylic • Digital Art</p>
+      </div>
+    </div>
+    <nav>
+      <a class="cta" href="#gallery">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card reveal">
+        <h2>Art that speaks softly and lingers.</h2>
+        <p>A curated collection of drawings, portraits, acrylics and digital pieces by <strong>Dr. P. S. Suvetha</strong>. Classy, minimal and timeless — each work crafted with care.</p>
+        <p style="margin-top:16px"><a class="cta" href="#contact">Contact the Artist</a></p>
+      </div>
+
+      <aside class="hero-card reveal" style="height:260px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="font-family: Georgia, serif;font-size:18px;margin-bottom:6px;">Featured</div>
+        <div style="max-width:260px;color:var(--muted)">A selection of recent works — placeholder images are shown. Replace with your own images to personalize.</div>
+      </aside>
+    </section>
+
+    <section class="about reveal">
+      <div class="bio hero-card">
+        <h3 style="margin-top:0">About</h3>
+        <p style="color:var(--muted)">I am an observant artist blending classical techniques with contemporary expression. With a background in portraiture and acrylic media, my work explores quiet moments and bold characters — rendered carefully using both traditional and digital tools. Welcome to <strong>Passionate Works</strong>, where each piece tells a small, intimate story.</p>
+        <p style="margin-top:12px;color:var(--muted)"><em>Exhibitions, commissions and prints available — reach out below.</em></p>
+      </div>
+
+      <div class="meta">
+        <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)">
+          <strong>Contact</strong>
+          <p style="margin:8px 0 0;color:var(--muted)">Email: <a href="mailto:passionateworks7@gmail.com">passionateworks7@gmail.com</a></p>
+          <p style="margin:8px 0 0;color:var(--muted)">Instagram: <a href="https://www.instagram.com/passionateworks_art/" target="_blank">@passionateworks_art</a></p>
+        </div>
+
+        <div style="background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)">
+          <strong>Work Types</strong>
+          <p style="margin:8px 0 0;color:var(--muted)">Drawings • Portraits • Acrylics • Digital</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h3 style="margin-bottom:12px">Gallery</h3>
+      <div class="gallery">
+        <!-- Placeholder images — replace with your images when ready -->
+        <div class="art" data-title="Artwork 1"><img src="https://via.placeholder.com/900x600?text=Artwork+1" alt="Artwork 1"><div class="meta-overlay">Artwork 1</div></div>
+        <div class="art" data-title="Artwork 2"><img src="https://via.placeholder.com/900x600?text=Artwork+2" alt="Artwork 2"><div class="meta-overlay">Artwork 2</div></div>
+        <div class="art" data-title="Artwork 3"><img src="https://via.placeholder.com/900x600?text=Artwork+3" alt="Artwork 3"><div class="meta-overlay">Artwork 3</div></div>
+        <div class="art" data-title="Artwork 4"><img src="https://via.placeholder.com/900x600?text=Artwork+4" alt="Artwork 4"><div class="meta-overlay">Artwork 4</div></div>
+        <div class="art" data-title="Artwork 5"><img src="https://via.placeholder.com/900x600?text=Artwork+5" alt="Artwork 5"><div class="meta-overlay">Artwork 5</div></div>
+        <div class="art" data-title="Artwork 6"><img src="https://via.placeholder.com/900x600?text=Artwork+6" alt="Artwork 6"><div class="meta-overlay">Artwork 6</div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <form class="contact-form" onsubmit="return sendEmail();">
+        <h3>Contact</h3>
+        <p style="color:var(--muted)">Send a quick message — this will open your email client so you can review before sending.</p>
+        <label for="name">Your name</label>
+        <input id="name" placeholder="Your name" required>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Hi, I'm interested in commissioning..." required></textarea>
+        <div style="margin-top:12px">
+          <button class="btn" type="submit">Compose Email</button>
+        </div>
+      </form>
+
+      <aside style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);">
+          <strong>Direct</strong>
+          <p style="margin:10px 0 0;color:var(--muted)">Email: <a href="mailto:passionateworks7@gmail.com">passionateworks7@gmail.com</a></p>
+          <p style="margin:10px 0 0;color:var(--muted)">Instagram: <a href="https://www.instagram.com/passionateworks_art/" target="_blank">@passionateworks_art</a></p>
+        </div>
+
+        <div style="background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);text-align:center;">
+          <strong>Commissions & Prints</strong>
+          <p style="margin:10px 0 0;color:var(--muted)">Open for commissions — email for pricing and availability.</p>
+          <a class="cta" href="mailto:passionateworks7@gmail.com">Email for commission</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="lightbox" id="lightbox"><img src="" alt="expanded"><div style="position:absolute;top:28px;right:28px;color:white;cursor:pointer;font-size:26px;" id="lb-close">×</div></div>
+
+    <footer>
+      © <span id="year"></span> Passionate Works — Dr. P. S. Suvetha
+    </footer>
+  </main>
+
+  <script>
+    // small utility to open mailto with subject/body
+    function sendEmail(){
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Commission inquiry from ' + (name || 'Website'));
+      const body = encodeURIComponent(message + '\n\n—\nSent from Passionate Works website');
+      const mail = 'mailto:passionateworks7@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = mail;
+      return false; // prevent actual submit
+    }
+
+    // lightbox logic
+    document.querySelectorAll('.art').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const src = el.querySelector('img').src;
+        const lb = document.getElementById('lightbox');
+        lb.querySelector('img').src = src;
+        lb.classList.add('open');
+      })
+    })
+    document.getElementById('lb-close').addEventListener('click', ()=>{
+      document.getElementById('lightbox').classList.remove('open');
+    })
+    document.getElementById('lightbox').addEventListener('click',(e)=>{
+      if(e.target.id === 'lightbox') e.currentTarget.classList.remove('open');
+    })
+
+    // reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('show'); })
+    },{threshold:0.08});
+    reveals.forEach(r=>io.observe(r));
+
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
